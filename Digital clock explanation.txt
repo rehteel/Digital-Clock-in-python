@@ -1,0 +1,140 @@
+Digital clock explanation
+
+~~~~~~~~~~~~~
+THIS WILL BE THE CODE
+~~~~~~~~~~~~~
+--------------------------------
+THIS WILL BE THE EXPLANATION
+---------------------------------
+
+
+
+first install the digital font file, use 7zip to extract the files out, and install the font.
+
+
+~~~~~~~~~~~~
+from tkinter import *
+~~~~~~~~~~~~
+------------------------------
+This line imports everything from the tkinter module, which is a library in Python used for creating graphical user interfaces (GUIs). The * means "import all the functions and classes in this module."
+------------------------------
+
+
+
+
+~~~~~~~~~~~~
+from tkinter.ttk import *
+~~~~~~~~~~~~
+-----------------------------------------
+This line imports everything from the ttk module, which is part of tkinter and provides a set of modern, themed widgets like buttons, labels, etc. that look nicer than the basic tkinter widgets.
+-----------------------------------------
+
+
+
+
+~~~~~~~~~~~~~~~~
+from time import strftime
+~~~~~~~~~~~~~~~~
+----------------------------------------
+This line imports the strftime function from the time module. strftime is used to format date and time in a specific way.
+----------------------------------------
+
+
+~~~~~~~~~~~~~~~
+root = Tk()
+~~~~~~~~~~~~~~~
+---------------------------------------------
+This line creates the main window of the application. Tk() initializes tkinter and returns the main window object, which we assign to the variable root.
+--------------------------------------------
+
+
+~~~~~~~~~~~~~~~~
+root.title("Clock")
+~~~~~~~~~~~~~~~~
+-----------------------------------------
+This line sets the title of the main window to "Clock". This is what you'll see in the title bar of the window.
+-----------------------------------------
+
+
+~~~~~~~~~~~~~~
+dark_pink = "#B92162"
+~~~~~~~~~~~~~~
+------------------------------------------
+This line defines a variable named dark_pink and assigns it the color value #B92162, which is a dark pink color in hexadecimal format.
+------------------------------------------
+
+
+
+~~~~~~~~~~~~~~
+def time():
+~~~~~~~~~~~~~~
+---------------------------------------
+This line starts a function definition named time. A function is a block of code that performs a specific task. This function will update the time displayed on the screen.
+---------------------------------------
+
+
+
+
+~~~~~~~~~~~~~
+string = strftime('%H:%M:%S %p')
+~~~~~~~~~~~~~
+----------------------------------
+Inside the time function, this line gets the current time formatted as hours:minutes
+AM/PM (like 02:30:45 PM) and stores it in the variable string.
+----------------------------------
+
+
+
+~~~~~~~~~~~~~~~~~
+label.config(text=string)
+~~~~~~~~~~~~~~~~~
+-------------------------------------------
+This line updates the text attribute of the label widget to the current time stored in string. Essentially, it changes the label to show the current time.
+-------------------------------------------
+
+
+~~~~~~~~~~~~~~
+label.after(1000, time)
+~~~~~~~~~~~~~~
+------------------------------------
+This line tells tkinter to call the time function again after 1000 milliseconds (or 1 second). This creates a loop that keeps updating the time every second.
+------------------------------------
+
+
+~~~~~~~~~~~~~~~~
+label = Label(root, font=("digital-dream", 80), background="pink", foreground=dark_pink)
+~~~~~~~~~~~~~~~~
+---------------------------------------------
+This line creates a label widget (a piece of text) inside the root window. It sets the font of the text to "digital-dream" with a size of 80, the background color to pink, and the text color to the dark pink defined earlier.
+---------------------------------------------
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~
+label.pack(anchor='center')
+~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
+This line adds the label to the window and centers it. pack is a method used to arrange widgets in the window, and anchor='center' makes sure the label is in the center.
+---------------------------------------
+
+
+~~~~~~~~~~~~~~
+time()
+~~~~~~~~~~~~~~
+-----------------------------------
+This line calls the time function for the first time to start the clock. After this, the function will keep calling itself every second.
+-----------------------------------
+
+
+
+~~~~~~~~~~~~~
+mainloop()
+~~~~~~~~~~~~~
+---------------------------------
+This line starts the tkinter event loop, which waits for events (like button clicks or updates) and handles them as long as the window is open. This is what keeps the window displaying and responsive.
+-----------------------------------
+
+
+Putting it all together, this script creates a window with a label that displays the current time, updating every second with a pink background and dark pink text.
